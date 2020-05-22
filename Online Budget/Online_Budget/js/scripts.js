@@ -117,6 +117,7 @@ $(document).ready(function(){
     };
 
     $(".option-filter div").click(function(){
+
        $(this).parent().children("div").removeClass("selected");
        $(this).addClass("selected");
 
@@ -124,8 +125,24 @@ $(document).ready(function(){
        parametros_pesquisa[categoria] = $(this).attr("id");
        atualizar_orçamento(parametros_pesquisa);
 
-    })
-    
+    });
+
+    $("select").change(function(){
+
+        var parametro_select = $(this).attr("id");
+        parametros_pesquisa[parametro_select] = $(this).val();
+        atualizar_orçamento(parametros_pesquisa);
+
+    });
+
+    $("#quantidade").change(function(){
+
+        var parametro_input = $(this).attr("id");
+        parametros_pesquisa[parametro_input] = $(this).val();
+        atualizar_orçamento(parametros_pesquisa);
+
+    });
+
     
     atualizar_orçamento(parametros_pesquisa);
   });
