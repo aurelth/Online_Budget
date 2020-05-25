@@ -125,6 +125,7 @@ $(document).ready(function(){
         $('#result_embalagem').html($( id_embalagem).html( ));
 
         $('#result_quantidade').html(parametros.quantidade);
+        
         $('#valor-total').html(valor_total.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2}));
         $('#foto-produto').attr('src', foto);
 
